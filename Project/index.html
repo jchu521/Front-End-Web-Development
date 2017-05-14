@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--setting viewport of device   Bootstrap is mobile first-->
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--To ensure proper rendering and touch zooming-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--search engine-->
+    <meta name="keywords" content="Taiwan" />
+    <meta name="description" content="Taiwan Travel" />
+    <!--main page title-->
+    <title>Travel in Taiwan</title>
+    <!--setting bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootsrap-theme.min.css" rel="stylesheet" />
+    <!--adding font-awesome-->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-social.css" rel="stylesheet"/>
+    <!--adding myStyles css-->
+    <link href="css/myStyles.css" rel="stylesheet" />
+</head>
+<body>
+    <!--narbar brand and items on right-->
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <!--主體-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <!--sr-only (information intended only for screen readers)-->
+                    <span class="sr-only">Toggle navigation</span>
+                    <!--create a button with three horizontal lines-->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button> 
+                <a class="navbar-brand" href="#">Travel in Taiwan</a>
+            </div>
+            <!--頁面-->
+            <!--網頁縮小後放大 回復正常介面-->
+            <div class="collapse navbar-collapse" id="navbar">
+                <!--正常 navbar-->
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="/html/tourism.html">Tourism</a></li>
+                    <li class="dropdown">
+                        <a href="/html/cuisine.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Taiwanese Cuisine
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="html/cuisine/gourmentCuisine.html">Gourment Cuisine</a></li>
+                            <li><a href="#">Snacks</a></li>
+                            <li><a href="#">Beverages</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!--右邊介面-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav> 
+    <!--top of page-->
+    <header>
+        <h1>Travel in Taiwan</h1>
+    </header>
+    <!--Carousel-->
+    <div class="container">
+        <span class="sr-only">carousel</span>
+        <div id="myCarousel" class="carousel" data-ride="carousel">
+            <!--Indicators-->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <!--todo 要調正圖片大小-->
+                    <img src="images/food.jpg" alt="food" style="width: auto;" />
+                    <div class="carousel-caption">
+                        <h3><mark>Taiwanese Cuisine</mark></h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <!--todo 要調正圖片大小-->
+                    <img src="images/tourism.jpg" alt="tourism" style="width:100%;" />
+                    <div class="carousel-caption">
+                        <h3>Tourism Place</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </div>
+    </div>
+
+    <!--mid of page-->
+    <div class="container">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+    <!--bottoom of page-->
+    <footer class="row-footer">
+        <div class="container">
+            <div class="row">
+                <!--Links-->
+                <div class="col-xs-2  ">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="html/tourism.html" >Tourism</a></li>
+                        <li><a href="html/cuisine.html">Taiwanese Cuisine</a></li>
+                    </ul>
+                </div>
+                <!--Tourism-->
+                <div class="col-xs-2 ">
+                    <h5>Tourism</h5>
+                    <ul class="list-unstyled">
+                        <li><a href=""></a></li>
+                    </ul>
+                </div>
+                <!--Taiwanese Cuisine-->
+                <div class="col-xs-2 ">
+                    <h5>Taiwanese Cuisine</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="html/cuisine/gourmentCuisine.html">Gourment Cuisine</a></li>
+                        <li><a href="html/cuisine/snacks.html">Snacks</a></li>
+                        <li><a href="html/cuisine/beverages.html">Beverages</a></li>
+                    </ul>
+                </div>
+                <!--Contact Information-->
+                <div class="col-xs-2 ">
+                    <h5>Contact Information</h5>
+                    <address>
+                        Address: 11 Auckland
+                        <ul class="list-unstyled">
+                            <li>ph:11111111</li>
+                            <li><a href="mailto:123@gmail.com">Email:123@gmail.com</a></li>
+                        </ul>
+                    </address>
+                </div>
+                <div class="col-xs-3 col-sm-4">
+                    <div class="nav navbar-nav" style="padding: 40px 10px;">
+                        <a class="btn btn-social-icon " href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                    </div>
+                </div>
+        </div>
+    </footer>
+    <!--jQuery for bootstrap's js plugins-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
