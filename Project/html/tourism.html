@@ -7,52 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="../css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/font-awesome.css" rel="stylesheet" />
+    <link href="../css/bootstrap-social.css" rel="stylesheet" />
+    <script src="../js/sharedNavbarAndFooter.js"></script>
+    <link href="../css/myStyles.css" rel="stylesheet" />
 </head>
 <body>
     <!--narbar brand and items on right-->
-    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-        <div class="container">
-            <!--主體-->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <!--sr-only (information intended only for screen readers)-->
-                    <span class="sr-only">Toggle navigation</span>
-                    <!--create a button with three horizontal lines-->
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="../index.html">Travel in Taiwan</a>
-            </div>
-            <!--頁面-->
-            <!--網頁縮小後放大 回復正常介面-->
-            <div class="collapse navbar-collapse" id="navbar">
-                <!--正常 navbar-->
-                <ul class="nav navbar-nav">
-                    <li><a href="../index.html">Home</a></li>
-                    <li class="active"><a href="#">Tourism</a></li>
-                    <li class="dropdown">
+    <nav id="navbar" class="navbar navbar-inverse navbar-static-top" role="navigation">
 
-                        <a href="html/cuisine.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Taiwanese Cuisine
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="cuisine/gourmentCuisine.html">Gourment Cuisine</a></li>
-                            <li><a href="#">Snacks</a></li>
-                            <li><a href="#">Beverages</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <!--右邊介面-->
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
     </nav> 
+    <!--bottoom of page-->
+    <footer id="footer" class="row-footer"></footer>
     <!--jQuery for bootstrap's js plugins-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>
