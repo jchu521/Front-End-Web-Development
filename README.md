@@ -2,6 +2,4 @@
 
 ## Projects
 ### Udacity
-* Animal Card 
-http://github.com - automatic!
-[GitHub](http://github.com)
+* [Animal Card](https://github.com/jchu521/Front-End-Web-Development/tree/master/Udacity/Animal_Card)
