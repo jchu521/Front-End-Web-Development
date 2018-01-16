@@ -1,0 +1,43 @@
+/* add your CSS here */
+body {
+
+}
+
+#card-View{
+  border: 2px solid lightblue;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #ddd;
+  width: 320px;
+}
+
+.animal-img{
+    width: 300px;
+    height: 200px;
+    margin: inherit;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+.animal-info{
+  border: 2px solid lightblue;
+  border-radius: 10px;
+  padding: 0px 20px 0px 20px;
+
+  background-color: powderblue;
+  width: 280px;
+}
+
+.animal-fact{
+  font-style: italic;
+
+}
+
+.animal-list-item{
+  list-style: none;
+}
+
+.animal-list-item li span{
+  font-weight: bold;
+}
