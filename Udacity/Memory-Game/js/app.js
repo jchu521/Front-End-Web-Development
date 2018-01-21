@@ -10,8 +10,14 @@
  *   - add each card's HTML to the page
  */
 
+const deck = document.querySelector(".deck")
+const array = ["fa-diamond","fa-anchor","fa-paper-plane-o","fa-bolt","fa-cube","fa-leaf","fa-bicycle","fa-bomb"];
+
+deck.addEventListener("load",createDeck())
+
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
+    array = array.concat(array)
     var currentIndex = array.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
@@ -21,11 +27,24 @@ function shuffle(array) {
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
     }
-
     return array;
 }
 
+function createDeck(){
+  let cards = shuffle(array)
+  for(var i = 0; i < (array.length*2); i++){
+    createCard(cards[i]);
+  }
+}
 
+function createCard(cardName){
+  const li = document.createElement('li')
+  const i = document.createElement('i')
+  li.setAttribute('class','card open show');
+  i.setAttribute('class','fa '+ cardName);
+  li.appendChild(i)
+  deck.appendChild(li)
+}
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
