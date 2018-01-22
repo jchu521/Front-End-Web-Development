@@ -15,11 +15,20 @@ var game ={
   match: 0,
   star: 3,
   startTimmer: false,
-  matchCardArray:[],
+  startTime: 0,
+  endTime: 0,
+  time: endTime - startTime,
 }
-
+var matchCardArray=[]
+var moves = 0
+var win = false
+var match = 0
+var star = 3
+var startTimmer = false
 const array = ["fa-diamond","fa-anchor","fa-paper-plane-o","fa-bolt","fa-cube","fa-leaf","fa-bicycle","fa-bomb"];
-
+var startTime
+var endTime
+var time
 //load page
 startGame()
 //$(".deck").load("index.html",createDeck())
@@ -30,18 +39,28 @@ function startGame(){
 
   $('li').click(function (e){
     Timer()
-
     gameLogic(this)
   })
 }
 
 //stop watch
 function Timer(){
-  if(!game.startTimmer){
-    game.startTimmer = true
-    $(".timer").timer()
+  if(!startTimmer){
+    startTime = event.timeStamp
+    startTimmer = true
+  }else{
+    time = event.timeStamp - startTime
   }
 }
+
+//convert number to time
+function covertTime(){
+  var sec = (time/1000).toFixed(0)
+  var mins = (sec/60).toFixed(0)
+  //var hour = (mins/60).toFixed(0)
+  return `${mins}m ${sec}s`
+}
+
 
 //create deck
 function createDeck(){
@@ -52,9 +71,9 @@ function createDeck(){
 
 // check card list
 function gameLogic(card){
-  if(game.matchCardArray.length < 2){
+  if(matchCardArray.length < 2){
     showCard(card)
-    if(game.matchCardArray.length === 2){
+    if(matchCardArray.length === 2){
       setTimeout(function(){isMatch()}, 500);
     }
   }
@@ -64,7 +83,7 @@ function gameLogic(card){
 function showCard(card){
     $(card).toggleClass('open show')
     disableClick(card)
-    game.matchCardArray.push(card)
+    matchCardArray.push(card)
 }
 
 // ON/OFF click function
@@ -81,14 +100,14 @@ function enableClick(card){
 //Check if the cards are matched
 function isMatch(){
   //https://stackoverflow.com/questions/14832603/check-if-all-values-of-array-are-equal?answertab=active#tab-top
-  let l = !!game.matchCardArray.reduce(function(a, b){ return (a["firstChild"]["className"] === b["firstChild"]["className"]) ? a : NaN; });
+  let l = !!matchCardArray.reduce(function(a, b){ return (a["firstChild"]["className"] === b["firstChild"]["className"]) ? a : NaN; });
   countMoves()
-  if (game.matchCardArray[0].firstChild.className === game.matchCardArray[1].firstChild.className) {
-    game.matchCardArray.map(card => card.className = "card match")
+  if (matchCardArray[0].firstChild.className === matchCardArray[1].firstChild.className) {
+    matchCardArray.map(card => card.className = "card match")
     resetMatchCardArray()
     countMatch()
   }else{
-    game.matchCardArray.map(card =>{
+    matchCardArray.map(card =>{
       card.className = "card"
       enableClick(card)
     })
@@ -99,7 +118,7 @@ function isMatch(){
 
 // reset card array
 function resetMatchCardArray(){
-  game.matchCardArray = []
+  matchCardArray = []
 }
 
 //reset page
@@ -116,41 +135,39 @@ $('.play-again').click(function(e){
 
 // count Moves
 function countMoves(){
-  game.moves++
-  $('.moves').text(`${game.moves} Moves` )
+  moves++
+  $('.moves').text(moves)
   starRating()
 }
 
 //starRating
 function starRating(){
-  if(game.moves === 10){
-    game.star--
-    $('.star3').toggleClass('fa-star-o',true)
-    $('.star3').toggleClass('fa-star',false)
-  }else if(game.moves === 15){
-    game.star--
-    $('.star2').toggleClass('fa-star-o',true)
-    $('.star2').toggleClass('fa-star',false)
-  }else if(game.moves === 20){
-    game.star--
-    $('.star1').toggleClass('fa-star-o',true)
-    $('.star1').toggleClass('fa-star',false)
+  if(moves === 10){
+    star--
+    $('.star3').css('color','#d3d3d3')
+  }else if(moves === 15){
+    star--
+    $('.star2').css('color','#d3d3d3')
+  }else if(moves === 20){
+    star--
+    $('.star1').css('color','#d3d3d3')
   }
 }
 
 //matched
 function countMatch(){
-  game.match++
-  if(game.match === array.length){
+  match++
+  if(match === array.length){
     wonGame()
-    $(".timer").timer('pause');
   }
 }
 
+
+
 //win
 function wonGame(){
-  let time = $(".timer").timer('pause')[0].innerHTML;
-  $('.modal-body').append(`<p>With ${game.moves} Moves and Taken Time: ${time}</p><p>${game.star} stars</p>`)
+  let time = covertTime()
+  $('.modal-body').append(`<p>With ${moves} Moves and Taken Time: ${time}</p><p>${star} stars</p>`)
   $('#myModal').modal()
 }
 
