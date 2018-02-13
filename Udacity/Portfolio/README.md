@@ -1,4 +1,4 @@
-# PortFolio Site
+# Portfolio Site
 
 ## Project 2 - Build a Portfolio Site
 
